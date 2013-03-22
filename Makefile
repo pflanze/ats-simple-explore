@@ -1,9 +1,10 @@
 CC=atscc
 
-objects= hello.o
+objects= hello
 
-all: hello
+all: foo
 
-hello.o: hello.dats Makefile
+hello: hello.dats Makefile
 
-hello: $(objects)
+foo: $(objects)
+	cat $(objects) > foo
