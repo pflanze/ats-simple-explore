@@ -1,2 +1,9 @@
-hello: hello.dats
-	atscc -o hello hello.dats
+CC=atscc
+
+objects= hello.o
+
+all: hello
+
+hello.o: hello.dats Makefile
+
+hello: $(objects)
