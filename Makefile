@@ -1,14 +1,4 @@
-CC=atscc
-CFLAGS=
-LDFLAGS=
-VPATH=.
-
-objects= hello
-
-all: main
 
 hello: hello.dats Makefile
+	atscc -o hello hello.dats
 
-
-main: $(objects)
-	cat $(objects) > main
