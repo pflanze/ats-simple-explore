@@ -7,9 +7,7 @@ main (argc, argv) = let
   and inner
     {i,j:nat | i <= 9; j <= 10} (i: int i, j: int j): void =
     if j <= 9 then (
-      if i < j then (
-        print ", ";
-      );
+      if i < j then print ", ";
       printf ("(%i, %i)", @(i, j));
       inner (i, j+1)
     ) else (
