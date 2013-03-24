@@ -9,9 +9,9 @@ main (argc, argv) = let
     if j <= 9 then (
       if i < j then (
         print ", ";
-	printf ("(%i, %i)", @(i, j));
-	inner (i, j+1)
-      )
+      );
+      printf ("(%i, %i)", @(i, j));
+      inner (i, j+1)
     ) else (
       print_newline (); outer (i+1)
     )
