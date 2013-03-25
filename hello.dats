@@ -30,11 +30,10 @@ fn cbrt (c: double): double =
   newton_raphson (lam x => x * x * x - c, lam x => 3.0 * x * x, 1.0)
 
 
-typedef
-thunk = void -<cloref1> void
+typedef thunk = () -> void
 
 fun loop (th: thunk) = (
-    th (void);
+    th ();
     loop (th);
 )
 
@@ -43,7 +42,7 @@ implement
 main (argc, argv) = let
     val x = 103.1;
 in
-    loop (lam => (
+    loop (lam () => (
 	printf ("sqrt(%f)= %f", @(x,mysqrt(x)));
 	print_newline ();
     ));
