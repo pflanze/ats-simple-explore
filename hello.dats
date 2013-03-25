@@ -30,8 +30,11 @@ fn cbrt (c: double): double =
   newton_raphson (lam x => x * x * x - c, lam x => 3.0 * x * x, 1.0)
 
 
-fun loop (thunk) = (
-    thunk ();
+typedef
+thunk = () -<cloref1> ()
+
+fun loop (th: thunk) = (
+    th ();
     loop (thunk);
 )
 
