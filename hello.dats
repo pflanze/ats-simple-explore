@@ -31,11 +31,11 @@ fn cbrt (c: double): double =
 
 
 typedef
-thunk = () -<cloref1> ()
+thunk = void -<cloref1> void
 
 fun loop (th: thunk) = (
-    th ();
-    loop (thunk);
+    th (void);
+    loop (th);
 )
 
 
