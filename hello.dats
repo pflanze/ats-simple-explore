@@ -14,12 +14,12 @@ fn newton_raphson (
     val y0 = f x0
   in
     if abs (y0 / x0) < epsilon then x0 else
-      let val y1 = f1 x0 in loop (f, f1, x0 - y0 / y1) end
-    // end of [if]
-  end // end of [loop]
+      let val y1 = f1 x0 in loop (f, f1, x0 - y0 / y1) 
+    end
+  end
 in
   loop (f, f1, x0)
-end // end of [newton_raphson]
+end
 
 // square root function
 fn sqrt (c: double): double =
