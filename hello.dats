@@ -23,7 +23,7 @@ in
 end
 
 // square root function
-fn sqrt (c: double): double =
+fn mysqrt (c: double): double =
   newton_raphson (lam x => x * x - c, lam x => 2.0 * x, 1.0)
 // cubic root function
 fn cbrt (c: double): double =
@@ -35,6 +35,6 @@ implement
 main (argc, argv) = let
     val x = 103.1;
 in
-    printf ("sqrt(%f)= %f", @(x,sqrt(x)));
+    printf ("sqrt(%f)= %f", @(x,mysqrt(x)));
     print_newline ();
 end
