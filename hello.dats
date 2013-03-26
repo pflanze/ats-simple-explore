@@ -42,8 +42,9 @@ implement
 main (argc, argv) = let
     val x = 103.1;
 in
-    loop (@lam (): void =<clo> (
+    loop (@lam () => (
 	printf ("sqrt(%f)= %f", @(x,mysqrt(x)));
 	print_newline ();
+        ()
     ));
 end
